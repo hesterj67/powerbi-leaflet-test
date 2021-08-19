@@ -1,0 +1,102 @@
+{
+    "dataRoles" : [
+        {
+            "name": "title",
+            "kind": "GroupingOrMeasure",
+            "displayName": "Title"
+        },
+        {
+            "name": "latitude",
+            "kind": "GroupingOrMeasure",
+            "displayName": "Latitude"
+        },
+        {
+            "name": "longitude",
+            "kind": "GroupingOrMeasure",
+            "displayName": "Longitude"
+        },
+        {
+            "name": "radius",
+            "kind": "GroupingOrMeasure",
+            "displayName": "Radius"
+        },
+        {
+            "name": "color",
+            "kind": "GroupingOrMeasure",
+            "displayName": "Color"
+        }
+    ],
+    "objects": {
+        "dataPoint": {
+            "displayName": "Data colors",
+            "properties": {
+                "defaultColor": {
+                    "displayName": "Default color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "showAllDataPoints": {
+                    "displayName": "Show all",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "fill": {
+                    "displayName": "Fill",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "fillRule": {
+                    "displayName": "Color saturation",
+                    "type": {
+                        "fill": {}
+                    }
+                },
+                 "fontSize": {
+                    "displayName": "Text Size",
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "dataViewMappings": [
+        {
+            "conditions": [{"title":{"max":1},"latitude":{"max":1}, "longitude":{"max":1},"radius":{"max":1},"color":{"max":1}}],
+            "table": {
+                "rows": {
+                    "select": [
+                        {
+                            "for": {"in": "title"}
+                        },
+                        {
+                            "for": {"in": "latitude"}
+                        },
+                        {
+                            "for": {"in": "longitude"}
+                        },
+                        {
+                            "for": {"in": "radius"}
+                        },
+                        {
+                            "for": {"in": "color"}
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
